@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Seats</title>
+  <link rel="stylesheet" href="seats.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Select Seats </h1>
+    <p id="movieName"></p>
+    <div class="seats">
+      <label>Number of Seats: </label>
+      <input type="number" id="numSeats" min="1" max="10" value="1">
+      <p>Price per seat: ₹150</p>
+    </div>
+    <button onclick="bill()">OK</button>
+  </div>
+  <script>
+    document.getElementById("movieName").innerText = "Movie: " + localStorage.getItem("selected");
+    function bill() {
+      const seats = document.getElementById("numSeats").value;
+      localStorage.setItem("selectedSeats", seats);
+      window.location.href = "bill.html";
+    }
+  </script>
+</body>
+</html>

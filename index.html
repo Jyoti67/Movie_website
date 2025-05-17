@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Movie</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1> Select a Movie which you want to watch </h1>
+    <div class="movies-grid">
+      <div class="movie-card" onclick="select('Kesari 2')">
+        <img src="kesari2.png" alt="Movie 1">
+        <p>Kesari 2</p>
+      </div>
+      <div class="movie-card" onclick="select('Raid 2')">
+        <img src="raid2.png" alt="Movie 2">
+        <p>Raid 2</p>
+      </div>
+      <div class="movie-card" onclick="select('The Bhootni')">
+        <img src="Bhootni.png" alt="Movie 3">
+        <p>The Bhootni</p>
+      </div>
+      <div class="movie-card" onclick="select('skyforce')">
+        <img src="skyforce.png" alt="Movie 4">
+        <p>skyforce</p>
+      </div>
+      <div class="movie-card" onclick="select('sikandar')">
+        <img src="sikandar.png" alt="Movie 5">
+        <p>sikandar</p>
+      </div>
+      <div class="movie-card" onclick="select('fighter')">
+        <img src="fighter.png" alt="Movie 6">
+        <p>fighter</p>
+      </div>
+      <div class="movie-card" onclick="select('Sankranthiki Vasthunam')">
+        <img src="Sankranthiki.png" alt="Movie 7">
+        <p>Sankranthiki Vasthunam</p>
+      </div>
+      <div class="movie-card" onclick="select('Thudarum')">
+        <img src="Thudarum.png" alt="Movie 8">
+        <p>Thudarum</p>
+      </div>
+      <div class="movie-card" onclick="select('The Royals')">
+        <img src="The Royals.png" alt="Movie 9">
+        <p>The Royals</p>
+      </div>
+      <div class="movie-card" onclick="select('kull')">
+        <img src="kull.png" alt="Movie 10">
+        <p>kull</p>
+      </div>
+    </div>
+    <button id="nextBtn" onclick="go()" disabled>Next</button>
+  </div>
+  <script>
+    
+    // let selectedMovie = "";
+    // function highlightMovie(card, movieName) {
+    //   document.querySelectorAll('.movie-card').forEach(el => el.classList.remove('selected'));
+    //   card.classList.add('selected');
+    //   selectedMovie = movieName;
+    //   document.getElementById('nextBtn').disabled = false;
+    // }
+    // function goToNext() {
+    //   localStorage.setItem("selectedMovie", selectedMovie);
+    //   window.location.href = "seats.html";
+    // }
+    function select(name) {
+    localStorage.setItem("selected", name);
+    document.getElementById('nextBtn').disabled = false;
+  }
+  function go() {
+    window.location.href = "seats.html";
+  }
+  </script>
+</body>
+</html>

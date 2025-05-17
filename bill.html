@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing</title>
+  <link rel="stylesheet" href="bill.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Billing Details</h1>
+    <p id="summary"></p>
+    <button onclick="confirmPayment()">Pay Now</button>
+  </div>
+  <script>
+    const movie = localStorage.getItem("selected");
+    const seats = localStorage.getItem("selectedSeats");
+    const price = 150;
+    const total = seats * price;
+    document.getElementById("summary").innerText = `Movie: ${movie}\nSeats: ${seats}\nTotal: ₹${total}`;
+    function confirmPayment() {
+      window.location.href = "confirmation.html";
+    }
+  </script>
+</body>
+</html>
